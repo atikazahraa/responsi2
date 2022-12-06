@@ -1,0 +1,45 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-button slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-button>
+    <ion-title>Edit Data Siswa</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Edit Pengeluaran</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-list lines="full">
+    <ion-item>
+      <ion-label position="floating">ID Pengeluaran</ion-label>
+      <ion-input required [(ngModel)]="id" readonly placeholder="ID Pengeluaran" type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Jenis Pengeluaran</ion-label>
+      <ion-select placeholder="Jenis Pengeluaran" [(ngModel)]="jenis_pengeluaran" (ionChange)="optionFn()" readonly>
+        <ion-select-option value="Makan" readonly>Makan</ion-select-option>
+        <ion-select-option value="Transportasi" readonly>Transportasi</ion-select-option>
+        <ion-select-option value="Kesehatan" readonly>Kesehatan</ion-select-option>
+        <ion-select-option value="Hadiah" readonly>Hadiah</ion-select-option>
+        <ion-select-option value="Lainnya" readonly>Lainnya</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Jumlah Pengeluaran</ion-label>
+      <ion-input required [(ngModel)]="jumlah_pengeluaran" placeholder="Jumlah Pengeluaran" type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Keterangan</ion-label>
+      <ion-input required [(ngModel)]="keterangan" placeholder="Keterangan" type="text"></ion-input>
+    </ion-item>
+    <ion-row>
+      <ion-col>
+        <ion-button type="button" (click)="editPengeluaran()" color="primary" shape="full" expand="block">Edit Pengeluaran</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-list>
+</ion-content>
